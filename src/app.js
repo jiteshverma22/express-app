@@ -15,4 +15,10 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
+// routes
+import taskRouter from "./routes/task.routes.js";
+
+//routes declaration
+app.use("/api/v1/tasks", taskRouter);
+
 export { app };
